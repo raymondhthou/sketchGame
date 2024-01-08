@@ -1,0 +1,22 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    background-color: lightgrey;
+}
+
+
+#gridContainer {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: white;
+    margin: 100px auto;
+}
+
+
+.cells {
+    border: 1px solid whitesmoke;
+}
