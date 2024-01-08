@@ -10,7 +10,14 @@ gridSketch.style.width = `${defaultSize}px`;
 gridSketch.style.height = `${defaultSize}px`;
 
 
-// An eventlistener with the function colorSelection created to draw over the gridSketch container
+// Input range functionality for resizing the grid
+const slideContainer = document.querySelector("#gridSlideContainer");
+const slide = document.querySelector("#slide");
+const rangeValue = document.querySelector("#valueSlide");
+rangeValue.textContent = `${slide.value} x ${slide.value} (Grid)`;
+
+
+// An eventlistener with the function draw created to draw over the gridSketch container
 function draw() {
     this.style.backgroundColor = "black";
 }
