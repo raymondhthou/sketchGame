@@ -10,6 +10,12 @@ gridSketch.style.width = `${defaultSize}px`;
 gridSketch.style.height = `${defaultSize}px`;
 
 
+// An eventlistener with the function colorSelection created to draw over the gridSketch container
+function draw() {
+    this.style.backgroundColor = "black";
+}
+
+
 // This function will create the actual divs/cells inside the grid container, using the variables of the default grid size, rows, columns, width and height
 function createCells() {
     for (let i = 0; i < (rows * columns); i++) {
@@ -19,6 +25,8 @@ function createCells() {
         
         cellCreation.classList.add("cells");
         gridSketch.appendChild(cellCreation);
+
+        cellCreation.addEventListener("mouseover", draw);
     }
 }
 
