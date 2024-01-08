@@ -9,6 +9,24 @@ body {
 }
 
 
+#title {
+    display: flex;
+    justify-content: center;
+}
+
+
+#gridSlideContainer {
+    display: flex;
+    justify-content: center;
+}
+
+
+#buttonSelection {
+    display: flex;
+    justify-content: center;
+}
+
+
 #gridContainer {
     display: flex;
     flex-wrap: wrap;
