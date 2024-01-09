@@ -57,10 +57,24 @@ createCells(16);
 
 // An eventlistener with the function draw created to draw over the gridSketch container
 function draw() {
-    this.style.backgroundColor = color;
+    if (color === 'random') {
+        this.style.backgroundColor = randomColor();
+    } else {
+        this.style.backgroundColor = color;
+    }
 }
 
 // Eventlistener when we onclick on buttons for different options
 function colorSelection(choice) {
     color = choice;
 }
+
+// Generate random colours for onclick 'random' choice
+function randomColor() {
+    const letters = '0123456789ABCDEF';
+    let color = '#';
+    for (let i = 0; i < 6; i++) {
+      color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+  }
