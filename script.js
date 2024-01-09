@@ -1,7 +1,7 @@
 // variables to create our Etch a Sketch grid
 const defaultSize = 500;
 let eachCell = 16;
-
+let colorDefault = "";
 
 // Create the width and height of our divs in the container by determining the number of pixels
 const gridSketch = document.querySelector("#gridContainer");
@@ -15,10 +15,7 @@ const rangeValue = document.querySelector("#valueSlide");
 rangeValue.textContent = `${slide.value} x ${slide.value} (Grid)`;
 
 
-// An eventlistener with the function draw created to draw over the gridSketch container
-function draw() {
-    this.style.backgroundColor = "black";
-}
+
 
 
 // This function will create the actual divs/cells inside the grid container, using the variables of the default grid size, rows, columns, width and height
@@ -56,3 +53,14 @@ slide.oninput = function () {
 
 
 createCells(16);
+
+
+// An eventlistener with the function draw created to draw over the gridSketch container
+function draw() {
+    this.style.backgroundColor = color;
+}
+
+// Eventlistener when we onclick on buttons for different options
+function colorSelection(choice) {
+    color = choice;
+}
