@@ -24,7 +24,7 @@ function draw() {
 // This function will create the actual divs/cells inside the grid container, using the variables of the default grid size, rows, columns, width and height
 function createCells(eachCell) {
     const numberOfCells = (eachCell * eachCell);
-    const widthHeight = `${(gridSketch / eachCell) - 2}px`;
+    const widthHeight = `${(defaultSize / eachCell) - 2}px`;
 
     for (let i = 0; i < numberOfCells; i++) {
         const cellCreation = document.createElement("div");

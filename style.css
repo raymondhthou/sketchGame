@@ -15,12 +15,6 @@ body {
 }
 
 
-#gridSlideContainer {
-    display: flex;
-    justify-content: center;
-}
-
-
 #buttonSelection {
     display: flex;
     justify-content: center;
@@ -31,10 +25,28 @@ body {
     display: flex;
     flex-wrap: wrap;
     background-color: white;
-    margin: 100px auto;
+    margin: 100px auto 0 auto;
 }
 
 
 .cells {
     border: 1px solid whitesmoke;
+}
+
+
+/* Slide tab functionality */
+#gridSlideContainer {
+    margin: 0 auto;
+    width: 500px;
+}
+
+.slide {
+    height: 25px;
+    width: 500px;
+    background-color: white;
+}
+
+#valueSlide {
+    margin: 0 auto;
+    text-align: center;
 }
