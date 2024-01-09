@@ -38,11 +38,20 @@ function createCells() {
 }
 
 
-// Function will reset grid/remove cells every time we change the grid size resolution
+//This function will reset grid/remove cells every time we change the grid size resolution
 function resetGrid() {
     while (gridSketch.firstChild) {
         gridSketch.removeChild(gridSketch.firstChild);
     }
+}
+
+
+// Eventlistener added for the functionality of the grid slide tab to reset the grid
+slide.oninput = function() {
+    let inputText = `${this.value} x ${this.value} (Grid)`;
+    rangeValue.innerHTML = inputText;
+    resetGrid();
+    createCells(this.value);
 }
 
 
