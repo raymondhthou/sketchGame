@@ -37,4 +37,13 @@ function createCells() {
     }
 }
 
+
+// Function will reset grid/remove cells every time we change the grid size resolution
+function resetGrid() {
+    while (gridSketch.firstChild) {
+        gridSketch.removeChild(gridSketch.firstChild);
+    }
+}
+
+
 createCells();
