@@ -1,7 +1,7 @@
 // variables to create our Etch a Sketch grid
 const defaultSize = 500;
 let eachCell = 16;
-let colorDefault = "";
+let color = "";
 
 // Create the width and height of our divs in the container by determining the number of pixels
 const gridSketch = document.querySelector("#gridContainer");
@@ -13,9 +13,6 @@ const slideContainer = document.querySelector("#gridSlideContainer");
 const slide = document.querySelector("#slide");
 const rangeValue = document.querySelector("#valueSlide");
 rangeValue.textContent = `${slide.value} x ${slide.value} (Grid)`;
-
-
-
 
 
 // This function will create the actual divs/cells inside the grid container, using the variables of the default grid size, rows, columns, width and height
@@ -58,7 +55,7 @@ createCells(16);
 // An eventlistener with the function draw created to draw over the gridSketch container
 function draw() {
     if (color === 'random') {
-        this.style.backgroundColor = randomColor();
+        this.style.backgroundColor = generateColor();
     } else {
         this.style.backgroundColor = color;
     }
@@ -70,11 +67,17 @@ function colorSelection(choice) {
 }
 
 // Generate random colours for onclick 'random' choice
-function randomColor() {
-    const letters = '0123456789ABCDEF';
-    let color = '#';
-    for (let i = 0; i < 6; i++) {
-      color += letters[Math.floor(Math.random() * 16)];
+function generateColor() {
+    const hexArray = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'A', 'B', 'C', 'D', 'E', 'F'];
+    let code = "";
+    for (let i = 0; i < 6; i++){
+     code += hexArray[Math.floor(Math.random()*16)];
     }
-    return color;
-  }
+    return `#${code}`;
+   }
+
+// This function with the onclick eventlistener will clear the board
+function clearGrid() {
+    let cell = document.querySelectorAll(".cells");
+    cell.forEach((div) => div.style.backgroundColor = "white");
+}
